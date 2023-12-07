@@ -1,0 +1,26 @@
+.container {
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  border: 1px solid #000000;
+}
+
+.comments {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.container div:last-child {
+  text-align: justify;
+}

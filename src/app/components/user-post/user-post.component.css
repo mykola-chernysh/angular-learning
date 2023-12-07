@@ -1,0 +1,23 @@
+.container {
+  width: 300px;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  padding: 5px;
+  border: 1px solid #000000;
+}
+
+.container h4 {
+  margin: 0;
+
+  text-align: center;
+}
+
+.post-btn {
+  padding: 5px;
+}

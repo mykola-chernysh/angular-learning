@@ -1,0 +1,13 @@
+.container {
+  width: 250px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border: 1px solid #000;
+}
+
+.posts-btn {
+  padding: 5px;
+}
