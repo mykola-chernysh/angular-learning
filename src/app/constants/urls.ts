@@ -10,8 +10,10 @@ const urls = {
     postsById: (id: number): string => `${users}/${id}/posts`
   },
   posts: {
-    byId: (id: number): string => `${posts}/${id}`,
-    commentsById: (id: number): string => `${posts}/${id}/comments`
+    byId: (id: number): string => `${posts}/${id}`
+  },
+  comments: {
+    commentsByPostId: (id: number): string => `${posts}/${id}/comments`
   }
 }
 

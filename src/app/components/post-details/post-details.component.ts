@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {NgForOf} from "@angular/common";
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {IComment, IPost} from "../../interface";
-import {ActivatedRoute, Router} from "@angular/router";
-import {PostService} from "../../services/post.service";
 import {PostCommentsComponent} from "../post-comments/post-comments.component";
+import {CommentService, PostService} from "../../services";
 
 @Component({
   selector: 'app-post-details',
@@ -20,7 +20,7 @@ export class PostDetailsComponent {
   post: IPost;
   comments: IComment[];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private postService: PostService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private commentService: CommentService, private postService:PostService) {
     this.activatedRoute.params.subscribe(({id}) => {
       this.post = this.router.getCurrentNavigation()?.extras.state as IPost;
 
@@ -28,7 +28,7 @@ export class PostDetailsComponent {
         this.postService.getById(id).subscribe(value => this.post = value);
       }
 
-      this.postService.getComments(id).subscribe(value => this.comments = value);
+      this.commentService.getComments(id).subscribe(value => this.comments = value);
     })
   }
 }

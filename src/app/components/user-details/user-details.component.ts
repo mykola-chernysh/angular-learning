@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgIf} from "@angular/common";
 
-import {IPost, IUser} from "../../interface";
+import {IUser} from "../../interface";
 import {UserService} from "../../services";
 import {UserPostsComponent} from "../user-posts/user-posts.component";
 
@@ -18,7 +18,6 @@ import {UserPostsComponent} from "../user-posts/user-posts.component";
 })
 export class UserDetailsComponent {
   user: IUser;
-  posts: IPost[]
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {
     this.activatedRoute.params.subscribe(({id}) => {
