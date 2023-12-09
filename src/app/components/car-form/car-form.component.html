@@ -1,0 +1,19 @@
+<div class="container">
+  <form [formGroup]="form" class="form">
+    <input type="text" placeholder="Enter brand" formControlName="brand">
+    <input type="text" placeholder="Enter price" formControlName="price">
+    <input type="text" placeholder="Enter year" formControlName="year">
+    <button [disabled]="form.invalid" (click)="carForUpdate ? update() : create()">{{carForUpdate ? 'Update car' : 'Add car'}}</button>
+  </form>
+  <div class="errors">
+    <div *ngIf="form.controls['brand'].errors && (form.controls['brand'].dirty || form.controls['brand'].touched)">
+      Brand contains only letters, from 1 to 20 characters!
+    </div>
+    <div *ngIf="form.controls['price'].errors && (form.controls['price'].dirty || form.controls['price'].touched)">
+      The price must be between 0 and 1000000
+    </div>
+    <div *ngIf="form.controls['year'].errors && (form.controls['year'].dirty || form.controls['year'].touched)">
+      The year must be from 1990 to this year
+    </div>
+  </div>
+</div>
